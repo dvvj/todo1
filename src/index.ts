@@ -2,6 +2,7 @@ import { TodoItem } from "./todoItem";
 import { TodoColl } from "./todoColl";
 import { TodoCollWMap } from "./todoColl_wMap";
 import * as inquirer from 'inquirer';
+import { JsonTodoColl } from "./todoColl_Json";
 
 let todos = [
   new TodoItem(1, "buy flowers"),
@@ -21,7 +22,7 @@ console.log(
   JSON.stringify(item)
 );
 
-let coll2 = new TodoCollWMap("adam", todos);
+let coll2 = new JsonTodoColl("adam", todos);
 console.log(`${coll2.userName}'s todo list (${todos.length}) (using map)`);
 newId = coll2.addTodo("go jogging");
 item = coll2.byId(newId);
@@ -62,4 +63,4 @@ function promptUser(): void {
   })
 }
 
-promptUser();
+//promptUser();
